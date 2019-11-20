@@ -13,6 +13,22 @@ git commit -m ""
 
 git push -u origin master
 
+## TODO LIST
+1.) Implement "Artist" everywhere. 
+
+2.) create spotifyAlbumInstance component - needs to have an add buttons/functionality, linked from the Spotify API.
+
+3.) albumInstance component - needs to have an edit, add, and delete buttons/functionality. Linked to MongoDB.
+
+4.) Add cards to the album instances - center/style them.
+
+5.) Remove the Welcome page, and replace it with the browse library page/component. 
+
+## EXTRAS
+1.) Implement "Genre" (TIME PERMITTING)
+
+2.) Implement search in the navbar, using the following filters: "Alphabetical, Genre, Year, Artist" (TIME PERMITTING)
+
 ## Available Scripts
 
 In the project directory, you can run:
