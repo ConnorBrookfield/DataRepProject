@@ -26,7 +26,6 @@ class AddAlbum extends React.Component {
   }
 
   handleSubmit(e){
-    // /alert(this.state.Title + "      " + this.state.Year + "       "+ this.state.Artwork);
     e.preventDefault();
     
     const newAlbum = {
