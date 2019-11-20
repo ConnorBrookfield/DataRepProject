@@ -1,7 +1,17 @@
-## Useful Links
+## LINKS
 [Using an external API](https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2)
 
 [Spotify API Docs](https://developer.spotify.com/documentation/web-api/reference/albums/get-several-albums/)
+
+## Quick GITHUB Commands
+
+git clone https://github.com/G00361129/DataRepProject.git
+
+git add .
+
+git commit -m ""
+
+git push -u origin master
 
 ## Available Scripts
 
