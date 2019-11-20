@@ -14,8 +14,6 @@ class EditAlbum extends React.Component{
     }
 
     componentDidMount(){
-        //alert(this.props.match.params.id);
-
         axios.get("http://localhost:4000/api/albums/" + this.props.match.params.id)
         .then((response)=>{
             this.setState({
