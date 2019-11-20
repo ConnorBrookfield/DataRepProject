@@ -1,5 +1,6 @@
 ## Useful Links
-[Using external API](https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2)
+[Using an external API](https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2)
+[Spotify API Docs](https://developer.spotify.com/documentation/web-api/reference/albums/get-several-albums/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
