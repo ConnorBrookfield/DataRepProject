@@ -9,16 +9,18 @@ class EditAlbum extends React.Component{
     
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
+        this.handleArtistChange = this.handleArtistChange.bind(this);
         this.handleYearChange = this.handleYearChange.bind(this);
         this.handleArtworkChange = this.handleArtworkChange.bind(this);
     }
 
     componentDidMount(){
-        axios.get("http://localhost:4000/api/albums/" + this.props.match.params.id)
+        axios.get("http://localhost:4000/api/myAlbums/" + this.props.match.params.id)
         .then((response)=>{
             this.setState({
                 _id:response.data._id,
                 Title:response.data.title,
+                Artist:response.data.artist,
                 Year:response.data.year,
                 Artwork:response.data.artwork
             })
@@ -28,14 +30,18 @@ class EditAlbum extends React.Component{
 
     handleTitleChange(e){
         this.setState({Title: e.target.value});
-      }
+    }
+
+    handleArtistChange(e){
+        this.setState({Artist: e.target.value});
+    }
     
     handleYearChange(e){
-    this.setState({Year: e.target.value});
+        this.setState({Year: e.target.value});
     }
 
     handleArtworkChange(e){
-    this.setState({Artwork: e.target.value});
+        this.setState({Artwork: e.target.value});
     }
 
     handleSubmit(e){
@@ -43,15 +49,16 @@ class EditAlbum extends React.Component{
         
         const newAlbum = {
             title: this.state.Title,
+            artist: this.state.Artist,
             year: this.state.Year,
             poster: this.state.Artwork
         };
 
-        axios.post('http://localhost:4000/api/albums', newAlbum) 
+        axios.put('http://localhost:4000/api/myAlbums/', this.state._id, newAlbum) 
         .then()
         .catch();           
     
-        this.setState({ Title:"", Year:"", Artwork:"" });    
+        this.setState({ Title:"", Artist:"", Year:"", Artwork:"" });    
     }
 
     render() {
@@ -61,6 +68,10 @@ class EditAlbum extends React.Component{
                     <div className ='form-group'>
                         <label>Album Title</label>
                         <input type = 'text' className = 'form-control' value = {this.state.Title} onChange = {this.handleTitleChange}></input>
+                    </div>
+                    <div className ='form-group'>
+                        <label>Album Artist</label>
+                        <input type = 'text' className = 'form-control' value = {this.state.Artist} onChange = {this.handleArtistChange}></input>
                     </div>
                     <div className ='form-group'>
                         <label>Album Year</label>

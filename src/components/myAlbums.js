@@ -1,16 +1,13 @@
 import React from 'react';
 import '../App.css';
+import AlbumInstance from "./albumInstance";
 
 class MyAlbums extends React.Component {
 
   render() {
-    return (
-      <div>
-        <h1>*MY ALBUMS LIST*</h1>
-        <br/>
-        <h1>*INSERT CARD OF ALBUMS HERE - UPDATE, DELETE functionality too*</h1>
-      </div>
-    );
+    return this.props.albums.map((album)=>{
+      return <AlbumInstance key={album._id} album={album}></AlbumInstance>
+    });
   }
 }
 

@@ -4,19 +4,11 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class AlbumInstance extends React.Component{
+
+class spotifyAlbumInstance extends React.Component{
 
   constructor(){
     super();
-    this.DeleteAlbum = this.DeleteAlbum.bind(this);
-  }
-
-  DeleteAlbum(e){
-    console.log("Delete Clicked");
-    axios.delete("http://localhost:4000/api/myAlbums/"+this.props.album._id)
-    .then()
-    .catch();
-
   }
 
   render(){
@@ -36,12 +28,11 @@ class AlbumInstance extends React.Component{
               </footer>
             </blockquote>
           </Card.Body>
-            <Link to={"/edit/" + this.props.album._id} className="btn btn-primary">Edit</Link>
-            <Button variant="danger" onClick={this.DeleteAlbum}>Delete</Button>
+            <Link to={"/addAlbum/" + this.props.album._id} className="btn btn-primary">Add to Library</Link>
         </Card>
         <br></br>
       </div>
     )
   }
 }
-export default AlbumInstance;
+export default spotifyAlbumInstance;
