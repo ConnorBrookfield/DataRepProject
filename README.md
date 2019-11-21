@@ -29,6 +29,10 @@ git push -u origin master
 
 2.) Implement search in the navbar, using the following filters: "Alphabetical, Genre, Year, Artist" (TIME PERMITTING)
 
+## HOW TO DEPLOY
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
