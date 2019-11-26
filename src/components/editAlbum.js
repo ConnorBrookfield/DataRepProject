@@ -4,8 +4,7 @@ import axios from "axios";
 class EditAlbum extends React.Component{
     constructor(props){
         super(props);
-    
-        this.state = { Title:"", Year:"", Artwork:"" };
+        this.state = { Title:"", Year:"", Artwork:""};
     
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -15,7 +14,7 @@ class EditAlbum extends React.Component{
     }
 
     componentDidMount(){
-        axios.get("http://localhost:4000/api/myAlbums/" + this.props.match.params.id)
+        axios.get("http://localhost:4000/api/albums/" + this.props.match.params.id)
         .then((response)=>{
             this.setState({
                 _id:response.data._id,
@@ -54,35 +53,37 @@ class EditAlbum extends React.Component{
             poster: this.state.Artwork
         };
 
-        axios.put('http://localhost:4000/api/myAlbums/', this.state._id, newAlbum) 
+        axios.put('http://localhost:4000/api/albums/' + this.state._id, newAlbum) 
         .then()
         .catch();           
     
-        this.setState({ Title:"", Artist:"", Year:"", Artwork:"" });    
+        this.setState({Title:"", Artist:"", Year:"", Artwork:""});  
+        
+        //Put a link back to the albumsLibrary page when this is clicked!
     }
 
     render() {
         return (
             <div>
-                <form onSubmit = {this.handleSubmit}>
-                    <div className ='form-group'>
+                <form onSubmit={this.handleSubmit}>
+                    <div className='form-group'>
                         <label>Album Title</label>
-                        <input type = 'text' className = 'form-control' value = {this.state.Title} onChange = {this.handleTitleChange}></input>
+                        <input type='text' className='form-control' value={this.state.Title} onChange={this.handleTitleChange}></input>
                     </div>
-                    <div className ='form-group'>
+                    <div className='form-group'>
                         <label>Album Artist</label>
-                        <input type = 'text' className = 'form-control' value = {this.state.Artist} onChange = {this.handleArtistChange}></input>
+                        <input type='text' className='form-control' value={this.state.Artist} onChange={this.handleArtistChange}></input>
                     </div>
-                    <div className ='form-group'>
+                    <div className='form-group'>
                         <label>Album Year</label>
-                        <input type ='text' className ='form-control' value = {this.state.Year} onChange = {this.handleYearChange}></input>
+                        <input type='text' className='form-control' value={this.state.Year} onChange={this.handleYearChange}></input>
                     </div>
-                    <div className ='form-group'>
+                    <div className='form-group'>
                         <label>Album Artwork (URL)</label>
-                        <textarea row ='3' className ='form-control' value = {this.state.Artwork} onChange = {this.handleArtworkChange}></textarea>
+                        <textarea row='3' className='form-control' value={this.state.Artwork} onChange={this.handleArtworkChange}></textarea>
                     </div>
                     <div>
-                        <input type = "submit" value = "Edit Album"></input>
+                        <input type="submit" value="Edit Album"></input>
                     </div>
                 </form>
             </div>

@@ -43,14 +43,14 @@ app.get('/albumDB', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 })
 
-app.get('/api/myAlbums', (req, res) => {
+app.get('/api/albums', (req, res) => {
 
     AlbumModel.find((error, data) =>{
-        res.json({myAlbums:data});
+        res.json({albums:data});
     })
 })
 
-app.get('/api/myAlbums/:id', (req, res)=>{
+app.get('/api/albums/:id', (req, res)=>{
     console.log(req.params.id);
 
     AlbumModel.findById(req.params.id, (error,data)=>{
@@ -58,7 +58,7 @@ app.get('/api/myAlbums/:id', (req, res)=>{
     })
 })
 
-app.delete('/api/myAlbums/:id', (req, res)=>{
+app.delete('/api/albums/:id', (req, res)=>{
     console.log(req.params.id);
 
     AlbumModel.deleteOne({_id: req.params.id},
@@ -67,7 +67,7 @@ app.delete('/api/myAlbums/:id', (req, res)=>{
         })
 })
 
-app.post('/api/myAlbums', (req,res)=>{
+app.post('/api/albums', (req,res)=>{
     console.log('Post request Successful');
     console.log(req.body.title);
     console.log(req.body.artist);
@@ -80,11 +80,10 @@ app.post('/api/myAlbums', (req,res)=>{
         year:req.body.year, 
         artwork:req.body.artwork
     });
-
     res.json('post recieved!');
 })
 
-app.get("/api/myAlbums/:id", (req,res)=>{
+app.get("/api/albums/:id", (req,res)=>{
     console.log("GET: " + req.params.id);
     
     AlbumModel.findById(req.params.id,(error, data)=>{
@@ -92,7 +91,7 @@ app.get("/api/myAlbums/:id", (req,res)=>{
     })
 })
 
-app.put("/api/myAlbums/:id", (req, res)=>{
+app.put("/api/albums/:id", (req, res)=>{
     console.log("Edit: " + req.params.id);
     console.log(req.body);
 

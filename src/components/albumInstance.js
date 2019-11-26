@@ -13,10 +13,9 @@ class AlbumInstance extends React.Component{
 
   DeleteAlbum(e){
     console.log("Delete Clicked");
-    axios.delete("http://localhost:4000/api/myAlbums/"+this.props.album._id)
+    axios.delete("http://localhost:4000/api/albums/"+this.props.album._id)
     .then()
     .catch();
-
   }
 
   render(){
@@ -36,7 +35,7 @@ class AlbumInstance extends React.Component{
               </footer>
             </blockquote>
           </Card.Body>
-            <Link to={"/edit/" + this.props.album._id} className="btn btn-primary">Edit</Link>
+            <Link to={"/editAlbum/" + this.props.album._id} className="btn btn-primary">Edit</Link>
             <Button variant="danger" onClick={this.DeleteAlbum}>Delete</Button>
         </Card>
         <br></br>
@@ -44,4 +43,5 @@ class AlbumInstance extends React.Component{
     )
   }
 }
+
 export default AlbumInstance;
