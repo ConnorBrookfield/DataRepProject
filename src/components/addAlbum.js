@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import {Link} from "react-router-dom";
 
 class AddAlbum extends React.Component {
   constructor(props){
@@ -40,7 +43,7 @@ class AddAlbum extends React.Component {
       artwork: this.state.Artwork
     };
 
-    axios.post('http://localhost:4000/api/myAlbums', newAlbum) 
+    axios.post('http://localhost:4000/api/albums', newAlbum) 
     .then()
     .catch();
 
@@ -49,28 +52,27 @@ class AddAlbum extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div className='form-group'>
-            <label>Album Title</label>
-            <input type='text' className='form-control' value={this.state.Title} onChange={this.handleTitleChange}></input>
-          </div>
-          <div className='form-group'>
-            <label>Album Artist</label>
-            <input type='text' className='form-control' value={this.state.Artist} onChange={this.handleArtistChange}></input>
-          </div>
-          <div className='form-group'>
-            <label>Album Year</label>
-            <input type='text' className='form-control' value={this.state.Year} onChange={this.handleYearChange}></input>
-          </div>
-          <div className='form-group'>
-            <label>Album Artwork (URL)</label>
-            <textarea row='3' className='form-control' value={this.state.Artwork} onChange={this.handleArtworkChange}></textarea>
-          </div>
-          <div>
-            <input type="submit" value="Add Album"></input>
-          </div>
-        </form>
+      <div class="centerElement">
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group>
+            <Form.Label>Album Title</Form.Label>
+            <Form.Control as="input" value={this.state.Title} onChange={this.handleTitleChange}/>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Album Artist</Form.Label>
+            <Form.Control as="input" value={this.state.Artist} onChange={this.handleArtistChange}/>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Album Year</Form.Label>
+            <Form.Control as="input" value={this.state.Year} onChange={this.handleYearChange}/>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Album Artwork</Form.Label>
+            <Form.Control as="textarea" value={this.state.Artwork} onChange={this.handleArtworkChange}/>
+          </Form.Group>
+
+          <Button variant="primary" type="submit">Add Album</Button>
+        </Form>
       </div>
     );
   }
