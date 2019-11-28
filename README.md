@@ -14,20 +14,15 @@ git commit -m ""
 git push -u origin master
 
 ## TODO LIST
-1.) create spotifyAlbumInstance component - needs to have an add buttons/functionality, linked from the Spotify API.
 
-2.) albumInstance component - needs to have an edit, add, and delete buttons/functionality. Linked to MongoDB.
-
-3.) Add cards to the album instances - center/style them.
-
-4.) Remove the Welcome page, and replace it with the browse library page/component. 
+1.) Do something with the Welcome Page. - Maybe create a new DB, have all the albums in that, and have a favourites DB? 
 
 ## EXTRAS
 1.) Implement "Genre" (TIME PERMITTING)
 
 2.) Implement search in the navbar, using the following filters: "Alphabetical, Genre, Year, Artist" (TIME PERMITTING)
 
-3.) Add Spotify link to each album
+3.) Implement an API to produce data for each album
 
 ## Available Scripts
 
