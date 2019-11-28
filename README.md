@@ -17,6 +17,8 @@ git push -u origin master
 
 1.) Do something with the Welcome Page. - Maybe create a new DB, have all the albums in that, and have a favourites DB? 
 
+2.) Make Navbar Sticky to top of page
+
 ## EXTRAS
 1.) Implement "Genre" (TIME PERMITTING)
 
