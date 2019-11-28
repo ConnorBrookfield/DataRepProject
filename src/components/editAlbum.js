@@ -67,7 +67,6 @@ class EditAlbum extends React.Component{
     render() {
         return (
             <div class="centerElement">
-                <h1>Edit Album</h1>
                 <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                     <Form.Label>Album Title</Form.Label>

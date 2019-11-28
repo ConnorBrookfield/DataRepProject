@@ -3,7 +3,6 @@ import '../App.css';
 import Albums from "./albums";
 import axios from "axios";
 import { CardDeck } from 'react-bootstrap';
-import Col from 'react-bootstrap/Col'
 
 class AlbumsLibrary extends React.Component {
     constructor(){
@@ -39,7 +38,7 @@ class AlbumsLibrary extends React.Component {
         return(
             <div class="centerElement">
                 <CardDeck>
-                    <Albums myAlbums={this.state.albums} ReloadDataMethod={this.ReloadDataMethod}></Albums>
+                    <Albums myAlbums={this.state.albums} ReloadDataMethod={this.ReloadDataMethod}></Albums>              
                 </CardDeck>            
             </div>
         );

@@ -12,8 +12,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar className="navbar-dark bg-dark" bg="primary">
-          <Nav className="mr-auto">
+        <Navbar className="navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">The Music Repo</a>
+          <Nav>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/addAlbum">Add Album</Nav.Link>
             <Nav.Link href="/albumsLibrary">My Albums</Nav.Link>
