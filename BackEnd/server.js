@@ -10,7 +10,6 @@ const mongoDB = "mongodb+srv://Admin:Admin@cluster0-kyhjx.mongodb.net/albumDB?re
 
 mongoose.connect(mongoDB,{useNewUrlParser:true});
 
-//DELETE THIS AFTER PRODUCTION BUILD, AFTER EXPRESS LINES HAVE BEEN ADDED
 app.use(cors());
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -18,9 +17,6 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
-//Add location to the build folder
-//FINISH LINE
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -38,13 +34,14 @@ const albumSchema = new Schema({
 })
 
 const AlbumModel = mongoose.model('album', albumSchema);
+const DefaultAlbumsModel = mongoose.model('defaultalbum', albumSchema);
 
+//Handling various requests from client, to the server, to the relivent databases.
 app.get('/albumDB', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 })
 
 app.get('/api/albums', (req, res) => {
-
     AlbumModel.find((error, data) =>{
         res.json({albums:data});
     })
@@ -83,12 +80,20 @@ app.post('/api/albums', (req,res)=>{
     res.json('post recieved!');
 })
 
-app.get("/api/albums/:id", (req,res)=>{
-    console.log("GET: " + req.params.id);
-    
-    AlbumModel.findById(req.params.id,(error, data)=>{
-        res.json(data);
-    })
+app.post('/api/albums/:id', (req,res)=>{
+    console.log('Post request Successful: Album id: '+ req.params.id);
+    console.log(req.body.title);
+    console.log(req.body.artist);
+    console.log(req.body.year);
+    console.log(req.body.artwork);
+
+    AlbumModel.create({
+        title:req.body.title, 
+        artist:req.body.artist,
+        year:req.body.year, 
+        artwork:req.body.artwork
+    });
+    res.json('post recieved!');
 })
 
 app.put("/api/albums/:id", (req, res)=>{
@@ -100,9 +105,10 @@ app.put("/api/albums/:id", (req, res)=>{
     })
 })
 
+app.get('/api/defaultAlbums', (req, res) => {
+    DefaultAlbumsModel.find((error, data) =>{
+        res.json({defaultAlbums:data});
+    })
+})
 
 app.listen(port, () => console.log("Listening on port ${port}!"))
-
-// app.get('*', (req,res) =>{
-//     res.sendFile(path.join(__dirname+'/../build/index.html'));
-// });

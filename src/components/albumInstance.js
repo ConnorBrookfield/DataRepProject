@@ -12,6 +12,7 @@ class AlbumInstance extends React.Component{
     this.DeleteAlbum = this.DeleteAlbum.bind(this);
   }
 
+  //Deletes an album from the database - sends a delete request to the server, which removes the specified album from the database
   DeleteAlbum(e){
     console.log("Delete Clicked");
     axios.delete("http://localhost:4000/api/albums/"+this.props.album._id)

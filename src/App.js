@@ -1,5 +1,5 @@
 import React from 'react';
-import MainContent from './components/mainContent';
+import DefaultAlbumsLibrary from "./components/defaultAlbumsLibrary";
 import AddAlbum from './components/addAlbum';
 import EditAlbum from "./components/editAlbum";
 import AlbumsLibrary from './components/albumsLibrary';
@@ -15,14 +15,14 @@ function App() {
         <Navbar className="navbar-dark bg-dark">
         <a class="navbar-brand" href="/">The Music Repo</a>
           <Nav>
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/">Browse</Nav.Link>
             <Nav.Link href="/addAlbum">Add Album</Nav.Link>
             <Nav.Link href="/albumsLibrary">My Albums</Nav.Link>
           </Nav>
         </Navbar>
         <br/>
         <Switch>
-        <Route exact path='/' component={MainContent}/>
+          <Route exact path='/' component={DefaultAlbumsLibrary}/>
           <Route exact path='/addAlbum' component={AddAlbum}/>
           <Route exact path='/albumsLibrary' component={AlbumsLibrary}/>
           <Route exact path='/editAlbum/:id' component={EditAlbum}/>

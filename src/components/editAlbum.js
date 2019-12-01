@@ -60,33 +60,34 @@ class EditAlbum extends React.Component{
         .catch();           
     
         this.setState({Title:"", Artist:"", Year:"", Artwork:""});  
-        
-        //Put a link back to the albumsLibrary page when this is clicked!
     }
 
     render() {
         return (
-            <div class="centerElement">
-                <Form onSubmit={this.handleSubmit}>
-                <Form.Group>
-                    <Form.Label>Album Title</Form.Label>
-                    <Form.Control as="input" value={this.state.Title} onChange={this.handleTitleChange}/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Album Artist</Form.Label>
-                    <Form.Control as="input" value={this.state.Artist} onChange={this.handleArtistChange}/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Album Year</Form.Label>
-                    <Form.Control as="input" value={this.state.Year} onChange={this.handleYearChange}/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Album Artwork</Form.Label>
-                    <Form.Control as="textarea" value={this.state.Artwork} onChange={this.handleArtworkChange}/>
-                </Form.Group>
-        
-                <Button variant="primary" type="submit">Edit Album</Button>
-            </Form>
+            <div>
+                <h1><b>Edit Album!</b></h1>
+                <div class="centerElement">
+                    <Form onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                        <Form.Label>Album Title</Form.Label>
+                        <Form.Control as="input" value={this.state.Title} onChange={this.handleTitleChange}/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Album Artist</Form.Label>
+                        <Form.Control as="input" value={this.state.Artist} onChange={this.handleArtistChange}/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Album Year</Form.Label>
+                        <Form.Control as="input" value={this.state.Year} onChange={this.handleYearChange}/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Album Artwork</Form.Label>
+                        <Form.Control as="textarea" value={this.state.Artwork} onChange={this.handleArtworkChange}/>
+                    </Form.Group>
+            
+                    <Button variant="primary" type="submit">Edit Album</Button>
+                </Form>
+                </div>
             </div>
         );
     }

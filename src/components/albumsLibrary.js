@@ -14,6 +14,7 @@ class AlbumsLibrary extends React.Component {
         albums: []
     };
 
+    //Sends a get request to the server, and gets back data from the database
     componentDidMount() {
         axios.get('http://localhost:4000/api/albums')
         .then((response)=>{
@@ -24,6 +25,7 @@ class AlbumsLibrary extends React.Component {
         });
     }
 
+    //Reloads the data after deletion
     ReloadDataMethod(){
         axios.get("http://localhost:4000/api/albums")
         .then((response)=>{
@@ -36,10 +38,13 @@ class AlbumsLibrary extends React.Component {
 
     render(){
         return(
-            <div class="centerElement">
-                <CardDeck>
-                    <Albums myAlbums={this.state.albums} ReloadDataMethod={this.ReloadDataMethod}></Albums>              
-                </CardDeck>            
+            <div>
+                <h1><b>My Album Library</b></h1>
+                <div class="centerElement">
+                    <CardDeck>
+                        <Albums myAlbums={this.state.albums} ReloadDataMethod={this.ReloadDataMethod}></Albums>              
+                    </CardDeck>        
+                </div>    
             </div>
         );
     }
