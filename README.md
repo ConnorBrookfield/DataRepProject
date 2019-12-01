@@ -1,31 +1,3 @@
-## LINKS
-[Using an external API with Axios](https://alligator.io/react/axios-react/)
-
-[Spotify API Docs](https://developer.spotify.com/documentation/web-api/reference/albums/get-several-albums/)
-
-## Quick GITHUB Commands
-
-git clone https://github.com/G00361129/DataRepProject.git
-
-git add .
-
-git commit -m ""
-
-git push -u origin master
-
-## TODO LIST
-
-1.) Do something with the Welcome Page. - Maybe create a new DB, have all the albums in that, and have a favourites DB? 
-
-2.) Make Navbar Sticky to top of page
-
-## EXTRAS
-1.) Implement "Genre" (TIME PERMITTING)
-
-2.) Implement search in the navbar, using the following filters: "Alphabetical, Genre, Year, Artist" (TIME PERMITTING)
-
-3.) Implement an API to produce data for each album
-
 ## Available Scripts
 
 In the project directory, you can run:
