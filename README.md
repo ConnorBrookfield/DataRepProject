@@ -1,6 +1,6 @@
 ## Data Representation & Querying Project 2019
 
-This project displays my learning and utilisation of the following technologies and :
+This project displays my learning and utilisation of the following technologies:
 
 - React
 - Node.js
@@ -12,6 +12,8 @@ This project displays my learning and utilisation of the following technologies 
 
 ## Brief Introduction
 This project was created to display my understanding of the technologies listed above in conjunction with CRUD functionality. This simple project uses those technologies, to display a database of Albums, while allowing the user to add new albums to the Database, remove, or update existing ones.
+
+## Below, are the commands to run the application (cd into the backend folder, and use the same commands to initlize the serverside)
 
 ### `npm start`
 
