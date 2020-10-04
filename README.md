@@ -1,6 +1,17 @@
-## Available Scripts
+## Data Representation & Querying Project 2019
 
-In the project directory, you can run:
+This project displays my learning and utilisation of the following technologies and :
+
+- React
+- Node.js
+- Express.js
+- MongoDB
+- Javascript
+- HTML
+- CSS
+
+## Brief Introduction
+This project was created to display my understanding of the technologies listed above in conjunction with CRUD functionality. This simple project uses those technologies, to display a database of Albums, while allowing the user to add new albums to the Database, remove, or update existing ones.
 
 ### `npm start`
 
